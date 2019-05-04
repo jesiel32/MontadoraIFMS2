@@ -11,6 +11,6 @@ package br.com.locadora.mapeamento.pessoa;
  */
 public class Cliente extends Pessoa{
     
-    
+    private int cod;
     
 }
