@@ -5,12 +5,40 @@
  */
 package br.com.locadora.mapeamento.pessoa;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+
 /**
  *
  * @author 05094805193
  */
-public class Cliente extends Pessoa{
+//Mapeando classe normal usando @Entity
+@Entity
+public class Cliente extends Pessoa implements Serializable{ //como esta herdando atributos nos usamos "implements Serializable"
     
-    private int cod;
+   private boolean pessoaFisica;
+    private boolean bomPagador;
     
+    
+    public Cliente(){
+        this.pessoaFisica = true;
+        this.bomPagador = true;
+    }
+    
+    public boolean isPessoaFisica() {
+        return pessoaFisica;
+    }
+
+    public void setPessoaFisica(boolean pessoaFisica) {
+        this.pessoaFisica = pessoaFisica;
+    }
+
+    public boolean isBomPagador() {
+        return bomPagador;
+    }
+
+    public void setBomPagador(boolean bomPagador) {
+        this.bomPagador = bomPagador;
+    }
+ 
 }
